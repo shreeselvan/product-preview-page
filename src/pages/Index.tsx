@@ -28,7 +28,6 @@ const features = [
 ];
 
 const Index = () => {
-  const [demoOpen, setDemoOpen] = useState(false);
   const [overviewOpen, setOverviewOpen] = useState(false);
 
   return (
@@ -71,8 +70,8 @@ const Index = () => {
       </section>
 
       {/* Right Panel */}
-      <section className="flex flex-1 flex-col items-center justify-center gap-6 bg-background p-8 md:p-12 lg:p-16">
-        <div className="w-full max-w-sm space-y-5">
+      <section className="flex flex-1 flex-col items-center justify-center bg-background p-8 md:p-12 lg:p-16">
+        <div className="flex flex-1 flex-col items-center justify-center w-full max-w-sm space-y-5">
           <h2 className="text-center text-2xl font-bold text-foreground">Get Started</h2>
           <p className="text-center text-sm text-muted-foreground">
             Explore what MindFleet Distributor OS can do for your operations.
@@ -80,7 +79,6 @@ const Index = () => {
 
           <Button
             className="w-full gap-2 h-14 text-base bg-[hsl(270,60%,38%)] hover:bg-[hsl(270,60%,32%)] text-white"
-            onClick={() => setDemoOpen(true)}
           >
             <Monitor className="h-5 w-5" />
             Demo of the Product
@@ -89,14 +87,14 @@ const Index = () => {
           <Button
             variant="outline"
             className="w-full gap-2 h-14 text-base border-[hsl(270,60%,38%)] text-[hsl(270,60%,38%)] hover:bg-[hsl(270,60%,38%)]/10"
-            
+            onClick={() => setOverviewOpen(true)}
           >
             <Rocket className="h-5 w-5" />
             Product Overview
           </Button>
         </div>
 
-        <footer className="mt-auto flex w-full items-center justify-between pt-8">
+        <footer className="flex w-full items-center justify-between pt-8">
           <span className="text-xs font-semibold tracking-widest text-muted-foreground">
             MINDFLEET AI
           </span>
@@ -107,17 +105,6 @@ const Index = () => {
         </footer>
       </section>
 
-      {/* Demo Dialog */}
-      <Dialog open={demoOpen} onOpenChange={setDemoOpen}>
-        <DialogContent className="text-center">
-          <DialogHeader>
-            <DialogTitle className="text-xl">🚀 Launching Soon!</DialogTitle>
-            <DialogDescription className="pt-2 text-base">
-              We're putting the finishing touches on our interactive demo. Stay tuned!
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
 
       {/* Overview Dialog */}
       <Dialog open={overviewOpen} onOpenChange={setOverviewOpen}>
