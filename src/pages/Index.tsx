@@ -89,7 +89,7 @@ const Index = () => {
           <Button
             variant="outline"
             className="w-full gap-2 h-14 text-base border-[hsl(270,60%,38%)] text-[hsl(270,60%,38%)] hover:bg-[hsl(270,60%,38%)]/10"
-            onClick={() => setOverviewOpen(true)}
+            
           >
             <Rocket className="h-5 w-5" />
             Product Overview
